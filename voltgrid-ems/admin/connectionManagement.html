@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connections — VoltGrid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand"><span class="bolt">⚡</span><span>VoltGrid<small>Staff console</small></span></div>
+    <nav id="vg-nav" data-active="connections"></nav>
+    <div class="flex">
+      <div class="who"><strong id="whoName"></strong><span id="whoMeta"></span></div>
+      <button id="logoutBtn" class="btn btn-ghost btn-sm">Log out</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <p class="eyebrow">Connections</p>
+    <h1>New connection requests</h1>
+    <p class="muted mb-2">Approve a request to issue its consumer number and meter, or reject it with a reason.</p>
+
+    <div class="glass">
+      <div class="card-head">
+        <h2>Pending requests</h2>
+        <span id="pendCount" class="badge in-progress"></span>
+      </div>
+      <div class="table-wrap">
+        <table class="glass-table">
+          <thead>
+            <tr><th>Req ID</th><th>Customer</th><th>Category</th><th>Address</th><th>Requested</th><th>Action</th></tr>
+          </thead>
+          <tbody id="pendingRows"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="glass mt-3">
+      <h2 class="mb-2">All connections</h2>
+      <div class="table-wrap">
+        <table class="glass-table">
+          <thead>
+            <tr><th>Consumer no.</th><th>Customer</th><th>Category</th><th>Meter</th><th>Address</th><th>Status</th></tr>
+          </thead>
+          <tbody id="allRows"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/chrome.js"></script>
+  <script src="../js/admin/connectionManagement.js"></script>
+</body>
+</html>
